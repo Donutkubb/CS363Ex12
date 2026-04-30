@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Prompt', sans-serif;
+  color: #333;
+  background-color: #f5f5f7;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 60px;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.btn-black {
+  background-color: black;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+    url('https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 56px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  color: #e5e5e5;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+/* Search Box */
+.search-wrapper {
+  display: flex;
+  background: white;
+  padding: 8px;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.search-wrapper input {
+  flex: 1;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+}
+
+.search-wrapper button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Result Pop-up */
+.search-result {
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 40px;
+  border-radius: 12px;
+  color: white;
+  display: inline-block;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Inventory Section & Table (แก้ไขให้กึ่งกลาง) */
+.inventory-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 40px;
+}
+
+.section-title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.table-container {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center; /* จัดเนื้อหาตารางกึ่งกลาง */
+}
+
+th {
+  background-color: #fafafa;
+  color: #888;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 20px 24px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #eee;
+  text-align: center; /* จัดหัวตารางกึ่งกลาง */
+}
+
+td {
+  padding: 20px 24px;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+  vertical-align: middle;
+  text-align: center; /* จัดข้อมูลในแถวกึ่งกลาง */
+}
+
+tr:hover {
+  background-color: #fcfcfc;
+}
+
+.item-name {
+  font-weight: 600;
+  color: #111;
+}
+
+.item-brand {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* Status Badges */
+.status {
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-in {
+  background: #e3f8e8;
+  color: #2e8b46;
+}
+
+.status-out {
+  background: #feebeb;
+  color: #d63232;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 { font-size: 36px; }
+  .table-container { overflow-x: auto; }
+  table { min-width: 700px; }
+}
