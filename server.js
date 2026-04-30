@@ -1,10 +1,8 @@
 import express from 'express';
-import cors from 'cors';
 import logger from 'morgan'; 
 import productRouter from './route/productRoute.js'; 
 
 const app = express();
-app.use(cors());
 
 app.use(logger("short")); 
 app.use(express.json());  
